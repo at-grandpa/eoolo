@@ -14,6 +14,7 @@ RUN apt-get -y install \
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 ENV HOME /root
 ENV NVM_DIR $HOME/.nvm
-RUN . $NVM_DIR/nvm.sh && nvm install node
+ENV NVM_VERSION v7.3.0
+RUN . $NVM_DIR/nvm.sh && nvm install $NVM_VERSION
 
 WORKDIR /root/eoolo
