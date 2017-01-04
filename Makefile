@@ -10,9 +10,11 @@ build:
 run:
 	docker run -v $(HOST_WORKDIR):$(CONTAINER_WORKDIR) -it $(REPOSITORY):$(TAG)
 
-LANGUAGES=js
+LANGUAGES=js php
 
 eoolo: $(LANGUAGES)
 
 $(LANGUAGES):
-	./scripts/eoolo.$@
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@./scripts/eoolo.$@

@@ -1,13 +1,16 @@
-#!/root/.nvm/versions/node/v7.3.0/bin/node
+#!/root/.phpenv/shims/php
+<?php
 
-var expr1 = function () {
-  console.log("expr1");
-  return false;
+function expr1()
+{
+  echo "print expr1\n";
+  return "return expr1";
 }
 
-var expr2 = function () {
-  console.log("expr2");
-  return true;
+function expr2()
+{
+  echo "print expr2\n";
+  return "return expr2";
 }
 
-console.log(expr1() && expr2());
+var_dump(expr1() || expr2());
