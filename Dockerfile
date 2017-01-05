@@ -67,5 +67,15 @@ RUN pyenv install $PYTHON_VERSION
 RUN pyenv global $PYTHON_VERSION
 RUN pyenv rehash
 
+# perl
+RUN anyenv install plenv
+ENV PLENV_ROOT $HOME/.anyenv/envs/plenv
+ENV PATH $HOME/.anyenv/envs/plenv/bin:$PATH
+ENV PATH $HOME/.anyenv/envs/plenv/shims:$PATH
+ENV PERL_VERSION 5.25.8
+RUN plenv install $PERL_VERSION
+RUN plenv global $PERL_VERSION
+RUN plenv rehash
+
 
 WORKDIR /root/eoolo
