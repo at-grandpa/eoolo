@@ -10,6 +10,11 @@ RUN apt-get -y install curl
 RUN apt-get -y install git
 RUN apt-get -y install vim
 
+# anyenv
+RUN git clone https://github.com/riywo/anyenv $HOME/.anyenv
+RUN mkdir -p $HOME/.anyenv/envs
+ENV PATH $HOME/.anyenv/bin:$PATH
+
 # node
 RUN apt-get -y install build-essential
 RUN apt-get -y install libssl-dev
@@ -33,8 +38,9 @@ RUN apt-get -y install libtidy-dev
 RUN apt-get -y install libxslt-dev
 RUN apt-get -y install autoconf
 RUN apt-get -y install automake
-RUN curl -L https://raw.github.com/CHH/phpenv/master/bin/phpenv-install.sh | bash
-RUN git clone git://github.com/CHH/php-build.git $HOME/.phpenv/plugins/php-build
+RUN anyenv install phpenv
+RUN $HOME/.anyenv/envs/phpenv/plugins/php-build/install.sh
+ENV PATH $HOME/.anyenv/envs/phpenv/bin:$HOME/.anyenv/envs/phpenv/shims:$PATH
 ENV PATH $HOME/.phpenv/bin:$HOME/.phpenv/shims:$PATH
 ENV PHP_VERSION 7.1.0
 RUN phpenv install $PHP_VERSION
