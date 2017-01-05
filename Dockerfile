@@ -40,11 +40,22 @@ RUN apt-get -y install autoconf
 RUN apt-get -y install automake
 RUN anyenv install phpenv
 RUN $HOME/.anyenv/envs/phpenv/plugins/php-build/install.sh
-ENV PATH $HOME/.anyenv/envs/phpenv/bin:$HOME/.anyenv/envs/phpenv/shims:$PATH
-ENV PATH $HOME/.phpenv/bin:$HOME/.phpenv/shims:$PATH
+ENV PATH $HOME/.anyenv/envs/phpenv/bin:$PATH
+ENV PATH $HOME/.phpenv/shims:$PATH
 ENV PHP_VERSION 7.1.0
 RUN phpenv install $PHP_VERSION
 RUN phpenv global $PHP_VERSION
 RUN phpenv rehash
+
+# ruby
+RUN anyenv install rbenv
+RUN $HOME/.anyenv/envs/rbenv/plugins/ruby-build/install.sh
+ENV PATH $HOME/.anyenv/envs/rbenv/bin:$PATH
+ENV PATH $HOME/.rbenv/shims:$PATH
+ENV RUBY_VERSION 2.4.0
+RUN rbenv install $RUBY_VERSION
+RUN rbenv global $RUBY_VERSION
+RUN rbenv rehash
+
 
 WORKDIR /root/eoolo

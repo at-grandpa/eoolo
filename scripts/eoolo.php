@@ -3,13 +3,13 @@
 
 function expr1()
 {
-  echo "print expr1\n";
+  echo "method expr1\n";
   return "return expr1";
 }
 
 function expr2()
 {
-  echo "print expr2\n";
+  echo "method expr2\n";
   return "return expr2";
 }
 
