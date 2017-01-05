@@ -77,5 +77,20 @@ RUN plenv install $PERL_VERSION
 RUN plenv global $PERL_VERSION
 RUN plenv rehash
 
+# D
+RUN apt-get -y install unzip
+RUN apt-get -y install gcc
+RUN anyenv install denv
+RUN git clone git://github.com/repeatedly/denv.git $HOME/.denv
+ENV PATH $HOME/.anyenv/envs/denv/bin:$PATH
+ENV PATH $HOME/.denv/shims:$PATH
+ENV D_VERSION dmd-2.072.2
+RUN denv install $D_VERSION
+RUN denv global $D_VERSION
+RUN denv rehash
+
+# java
+RUN apt-get -y install openjdk-8-jre
+RUN apt-get -y install openjdk-8-jdk
 
 WORKDIR /root/eoolo
