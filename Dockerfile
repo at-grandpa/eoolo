@@ -93,4 +93,15 @@ RUN denv rehash
 RUN apt-get -y install openjdk-8-jre
 RUN apt-get -y install openjdk-8-jdk
 
+# lua
+RUN anyenv install luaenv
+ENV PATH $HOME/.anyenv/envs/luaenv/bin:$PATH
+WORKDIR $HOME/.anyenv/envs/luaenv/plugins/lua-build/
+RUN $HOME/.anyenv/envs/luaenv/plugins/lua-build/install.sh
+ENV PATH $HOME/.luaenv/shims:$PATH
+ENV LUA_VERSION 5.3.3
+RUN luaenv install $LUA_VERSION
+RUN luaenv global $LUA_VERSION
+RUN luaenv rehash
+
 WORKDIR /root/eoolo
