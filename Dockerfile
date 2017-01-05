@@ -57,5 +57,15 @@ RUN rbenv install $RUBY_VERSION
 RUN rbenv global $RUBY_VERSION
 RUN rbenv rehash
 
+# python
+RUN anyenv install pyenv
+RUN $HOME/.anyenv/envs/pyenv/plugins/python-build/install.sh
+ENV PATH $HOME/.anyenv/envs/pyenv/bin:$PATH
+ENV PATH $HOME/.pyenv/shims:$PATH
+ENV PYTHON_VERSION 3.6.0
+RUN pyenv install $PYTHON_VERSION
+RUN pyenv global $PYTHON_VERSION
+RUN pyenv rehash
+
 
 WORKDIR /root/eoolo
