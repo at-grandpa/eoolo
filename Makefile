@@ -10,4 +10,19 @@ build:
 run:
 	docker run -v $(HOST_WORKDIR):$(CONTAINER_WORKDIR) -it $(REPOSITORY):$(TAG)
 
+LANGUAGES=js php rb py pl d java lua
+.PHONY: $(LANGUAGES)
 
+eoolo: $(LANGUAGES)
+
+$(LANGUAGES):
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@./scripts/eoolo.$@
+
+java:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@javac ./scripts/eoolo.java
+	@cd scripts; java eoolo
+	@rm -rf ./scripts/eoolo.class
