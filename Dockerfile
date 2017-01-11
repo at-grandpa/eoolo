@@ -104,4 +104,12 @@ RUN luaenv install $LUA_VERSION
 RUN luaenv global $LUA_VERSION
 RUN luaenv rehash
 
+# Nim
+WORKDIR $HOME
+RUN git clone https://github.com/nim-lang/Nim.git
+RUN git clone --depth 1 https://github.com/nim-lang/csources $HOME/Nim/csources
+WORKDIR $HOME/Nim/csources
+RUN sh build.sh
+ENV PATH $HOME/Nim/bin:$PATH
+
 WORKDIR /root/eoolo
