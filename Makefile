@@ -10,7 +10,7 @@ build:
 run:
 	docker run -v $(HOST_WORKDIR):$(CONTAINER_WORKDIR) -it $(REPOSITORY):$(TAG)
 
-LANGUAGES=js php rb py pl d java lua nim
+LANGUAGES=js php rb py pl d java lua nim go
 .PHONY: $(LANGUAGES)
 
 eoolo: $(LANGUAGES)
@@ -27,9 +27,13 @@ java:
 	@cd scripts; java eoolo
 	@rm -rf ./scripts/eoolo.class
 
-
 nim:
 	@echo ''
 	@echo '--- eoolo.$@ ---'
 	@nim c -r ./scripts/eoolo.nim 2>/dev/null
 	@rm -rf ./scripts/eoolo ./scripts/nimcache
+
+go:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@go run ./scripts/eoolo.go
