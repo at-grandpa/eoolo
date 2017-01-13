@@ -3,6 +3,7 @@ FROM ubuntu:16.04
 
 RUN mkdir -p /root/eoolo
 ENV HOME /root
+ENV LC_ALL C
 
 RUN apt-get -y update
 RUN apt-get -y upgrade
@@ -23,31 +24,8 @@ ENV NVM_DIR $HOME/.nvm
 ENV NODE_VERSION v7.3.0
 RUN . $NVM_DIR/nvm.sh && nvm install $NODE_VERSION
 
-# php
-RUN apt-get -y install libxml2
-RUN apt-get -y install libxml2-dev
-RUN apt-get -y install libcurl4-openssl-dev
-RUN apt-get -y install pkg-config
-RUN apt-get -y install libssl-dev
-RUN apt-get -y install libsslcommon2-dev
-RUN apt-get -y install libjpeg-dev
-RUN apt-get -y install libpng12-dev
-RUN apt-get -y install libmcrypt-dev
-RUN apt-get -y install libreadline-dev
-RUN apt-get -y install libtidy-dev
-RUN apt-get -y install libxslt-dev
-RUN apt-get -y install autoconf
-RUN apt-get -y install automake
-RUN anyenv install phpenv
-RUN $HOME/.anyenv/envs/phpenv/plugins/php-build/install.sh
-ENV PATH $HOME/.anyenv/envs/phpenv/bin:$PATH
-ENV PATH $HOME/.phpenv/shims:$PATH
-ENV PHP_VERSION 7.1.0
-RUN phpenv install $PHP_VERSION
-RUN phpenv global $PHP_VERSION
-RUN phpenv rehash
-
 # ruby
+RUN apt-get install -y libreadline-dev
 RUN anyenv install rbenv
 RUN $HOME/.anyenv/envs/rbenv/plugins/ruby-build/install.sh
 ENV PATH $HOME/.anyenv/envs/rbenv/bin:$PATH
@@ -77,46 +55,74 @@ RUN plenv install $PERL_VERSION
 RUN plenv global $PERL_VERSION
 RUN plenv rehash
 
-# D
-RUN apt-get -y install unzip
-RUN apt-get -y install gcc
-RUN anyenv install denv
-RUN git clone git://github.com/repeatedly/denv.git $HOME/.denv
-ENV PATH $HOME/.anyenv/envs/denv/bin:$PATH
-ENV PATH $HOME/.denv/shims:$PATH
-ENV D_VERSION dmd-2.072.2
-RUN denv install $D_VERSION
-RUN denv global $D_VERSION
-RUN denv rehash
+# Scheme
+RUN apt-get install -y gauche
 
-# java
-RUN apt-get -y install openjdk-8-jre
-RUN apt-get -y install openjdk-8-jdk
 
-# lua
-RUN anyenv install luaenv
-ENV PATH $HOME/.anyenv/envs/luaenv/bin:$PATH
-WORKDIR $HOME/.anyenv/envs/luaenv/plugins/lua-build/
-RUN $HOME/.anyenv/envs/luaenv/plugins/lua-build/install.sh
-ENV PATH $HOME/.luaenv/shims:$PATH
-ENV LUA_VERSION 5.3.3
-RUN luaenv install $LUA_VERSION
-RUN luaenv global $LUA_VERSION
-RUN luaenv rehash
-
-# Nim
-WORKDIR $HOME
-RUN git clone https://github.com/nim-lang/Nim.git
-RUN git clone --depth 1 https://github.com/nim-lang/csources $HOME/Nim/csources
-WORKDIR $HOME/Nim/csources
-RUN sh build.sh
-ENV PATH $HOME/Nim/bin:$PATH
-
-# Go
-WORKDIR /usr/local
-RUN apt-get -y install wget
-RUN wget -q https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
-RUN tar -C /usr/local -xzf go1.7.4.linux-amd64.tar.gz
-ENV PATH /usr/local/go/bin:$PATH
+# # php
+# RUN apt-get -y install libxml2
+# RUN apt-get -y install libxml2-dev
+# RUN apt-get -y install libcurl4-openssl-dev
+# RUN apt-get -y install pkg-config
+# RUN apt-get -y install libssl-dev
+# RUN apt-get -y install libsslcommon2-dev
+# RUN apt-get -y install libjpeg-dev
+# RUN apt-get -y install libpng12-dev
+# RUN apt-get -y install libmcrypt-dev
+# RUN apt-get -y install libreadline-dev
+# RUN apt-get -y install libtidy-dev
+# RUN apt-get -y install libxslt-dev
+# RUN apt-get -y install autoconf
+# RUN apt-get -y install automake
+# RUN anyenv install phpenv
+# RUN $HOME/.anyenv/envs/phpenv/plugins/php-build/install.sh
+# ENV PATH $HOME/.anyenv/envs/phpenv/bin:$PATH
+# ENV PATH $HOME/.phpenv/shims:$PATH
+# ENV PHP_VERSION 7.1.0
+# RUN phpenv install $PHP_VERSION
+# RUN phpenv global $PHP_VERSION
+# RUN phpenv rehash
+#
+# # D
+# RUN apt-get -y install unzip
+# RUN apt-get -y install gcc
+# RUN anyenv install denv
+# RUN git clone git://github.com/repeatedly/denv.git $HOME/.denv
+# ENV PATH $HOME/.anyenv/envs/denv/bin:$PATH
+# ENV PATH $HOME/.denv/shims:$PATH
+# ENV D_VERSION dmd-2.072.2
+# RUN denv install $D_VERSION
+# RUN denv global $D_VERSION
+# RUN denv rehash
+#
+# # java
+# RUN apt-get -y install openjdk-8-jre
+# RUN apt-get -y install openjdk-8-jdk
+#
+# # lua
+# RUN anyenv install luaenv
+# ENV PATH $HOME/.anyenv/envs/luaenv/bin:$PATH
+# WORKDIR $HOME/.anyenv/envs/luaenv/plugins/lua-build/
+# RUN $HOME/.anyenv/envs/luaenv/plugins/lua-build/install.sh
+# ENV PATH $HOME/.luaenv/shims:$PATH
+# ENV LUA_VERSION 5.3.3
+# RUN luaenv install $LUA_VERSION
+# RUN luaenv global $LUA_VERSION
+# RUN luaenv rehash
+#
+# # Nim
+# WORKDIR $HOME
+# RUN git clone https://github.com/nim-lang/Nim.git
+# RUN git clone --depth 1 https://github.com/nim-lang/csources $HOME/Nim/csources
+# WORKDIR $HOME/Nim/csources
+# RUN sh build.sh
+# ENV PATH $HOME/Nim/bin:$PATH
+#
+# # Go
+# WORKDIR /usr/local
+# RUN apt-get -y install wget
+# RUN wget -q https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
+# RUN tar -C /usr/local -xzf go1.7.4.linux-amd64.tar.gz
+# ENV PATH /usr/local/go/bin:$PATH
 
 WORKDIR /root/eoolo
