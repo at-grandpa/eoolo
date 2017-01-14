@@ -6,6 +6,7 @@ LANGUAGES= \
 		   py \
 		   pl \
 		   scm \
+		   c \
 		   # php \
 		   # d \
 		   # java \

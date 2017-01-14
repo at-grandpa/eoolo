@@ -18,6 +18,13 @@ pl:
 scm:
 	@$(MAKE) main LANG=scm
 
+c:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@gcc ./scripts/eoolo.c
+	@./a.out
+	@rm -rf ./a.out
+
 java:
 	@echo ''
 	@echo '--- eoolo.$@ ---'
