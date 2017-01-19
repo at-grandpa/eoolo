@@ -25,6 +25,9 @@ c:
 	@./a.out
 	@rm -rf ./a.out
 
+hs:
+	@$(MAKE) main LANG=hs
+
 java:
 	@echo ''
 	@echo '--- eoolo.$@ ---'

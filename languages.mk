@@ -7,6 +7,7 @@ LANGUAGES= \
 		   pl \
 		   scm \
 		   c \
+		   hs \
 		   # php \
 		   # d \
 		   # java \

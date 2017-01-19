@@ -58,6 +58,13 @@ RUN plenv rehash
 # Scheme
 RUN apt-get install -y gauche
 
+# C
+# Already installed.
+
+# Haskell
+RUN curl -sSL https://get.haskellstack.org/ | sh
+ENV PATH /usr/local/bin:$PATH
+RUN stack setup
 
 # # php
 # RUN apt-get -y install libxml2
