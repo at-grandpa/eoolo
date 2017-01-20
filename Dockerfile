@@ -85,6 +85,13 @@ ENV PATH $HOME/.cargo/bin:$PATH
 # C++
 # Already installed.
 
+# Go
+WORKDIR /usr/local
+RUN apt-get -y install wget
+RUN wget -q https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.7.4.linux-amd64.tar.gz
+ENV PATH /usr/local/go/bin:$PATH
+
 # # php
 # RUN apt-get -y install libxml2
 # RUN apt-get -y install libxml2-dev
@@ -131,12 +138,5 @@ ENV PATH $HOME/.cargo/bin:$PATH
 # WORKDIR $HOME/Nim/csources
 # RUN sh build.sh
 # ENV PATH $HOME/Nim/bin:$PATH
-#
-# # Go
-# WORKDIR /usr/local
-# RUN apt-get -y install wget
-# RUN wget -q https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
-# RUN tar -C /usr/local -xzf go1.7.4.linux-amd64.tar.gz
-# ENV PATH /usr/local/go/bin:$PATH
 
 WORKDIR /root/eoolo

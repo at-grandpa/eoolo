@@ -11,9 +11,9 @@ LANGUAGES= \
 		   d \
 		   rs \
 		   cpp \
+		   go \
 		   # php \
 		   # java \
 		   # lua \
 		   # nim \
-		   # go
 

@@ -45,6 +45,11 @@ cpp:
 	@./a.out
 	@rm -rf ./a.out
 
+go:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@go run ./scripts/eoolo.$@
+
 java:
 	@echo ''
 	@echo '--- eoolo.$@ ---'
@@ -58,7 +63,3 @@ nim:
 	@nim c -r ./scripts/eoolo.$@ 2>/dev/null
 	@rm -rf ./scripts/eoolo ./scripts/nimcache
 
-go:
-	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@go run ./scripts/eoolo.$@
