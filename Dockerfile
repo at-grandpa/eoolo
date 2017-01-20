@@ -77,6 +77,12 @@ RUN denv install $D_VERSION
 RUN denv global $D_VERSION
 RUN denv rehash
 
+# rust
+RUN curl https://sh.rustup.rs -sSf > rust_install.sh
+RUN sh rust_install.sh -y
+ENV PATH $HOME/.cargo/bin:$PATH
+
+
 # # php
 # RUN apt-get -y install libxml2
 # RUN apt-get -y install libxml2-dev

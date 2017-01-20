@@ -31,6 +31,13 @@ hs:
 d:
 	@$(MAKE) main LANG=$@
 
+rs:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@rustc ./scripts/eoolo.$@
+	@./eoolo
+	@rm -rf ./eoolo
+
 java:
 	@echo ''
 	@echo '--- eoolo.$@ ---'

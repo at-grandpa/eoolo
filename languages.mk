@@ -9,6 +9,7 @@ LANGUAGES= \
 		   c \
 		   hs \
 		   d \
+		   rs \
 		   # php \
 		   # java \
 		   # lua \
