@@ -82,6 +82,8 @@ RUN curl https://sh.rustup.rs -sSf > rust_install.sh
 RUN sh rust_install.sh -y
 ENV PATH $HOME/.cargo/bin:$PATH
 
+# C++
+# Already installed.
 
 # # php
 # RUN apt-get -y install libxml2

@@ -38,6 +38,13 @@ rs:
 	@./eoolo
 	@rm -rf ./eoolo
 
+cpp:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@g++ ./scripts/eoolo.$@
+	@./a.out
+	@rm -rf ./a.out
+
 java:
 	@echo ''
 	@echo '--- eoolo.$@ ---'

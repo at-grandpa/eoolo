@@ -10,6 +10,7 @@ LANGUAGES= \
 		   hs \
 		   d \
 		   rs \
+		   cpp \
 		   # php \
 		   # java \
 		   # lua \
