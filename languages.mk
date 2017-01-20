@@ -12,8 +12,8 @@ LANGUAGES= \
 		   rs \
 		   cpp \
 		   go \
+		   java \
 		   # php \
-		   # java \
 		   # lua \
 		   # nim \
 

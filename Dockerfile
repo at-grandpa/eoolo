@@ -92,6 +92,11 @@ RUN wget -q https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.7.4.linux-amd64.tar.gz
 ENV PATH /usr/local/go/bin:$PATH
 
+# java
+RUN apt-get -y update
+RUN apt-get -y install openjdk-8-jre
+RUN apt-get -y install openjdk-8-jdk
+
 # # php
 # RUN apt-get -y install libxml2
 # RUN apt-get -y install libxml2-dev
@@ -115,10 +120,6 @@ ENV PATH /usr/local/go/bin:$PATH
 # RUN phpenv install $PHP_VERSION
 # RUN phpenv global $PHP_VERSION
 # RUN phpenv rehash
-#
-# # java
-# RUN apt-get -y install openjdk-8-jre
-# RUN apt-get -y install openjdk-8-jdk
 #
 # # lua
 # RUN anyenv install luaenv
