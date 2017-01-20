@@ -8,8 +8,8 @@ LANGUAGES= \
 		   scm \
 		   c \
 		   hs \
+		   d \
 		   # php \
-		   # d \
 		   # java \
 		   # lua \
 		   # nim \

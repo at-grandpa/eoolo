@@ -28,6 +28,9 @@ c:
 hs:
 	@$(MAKE) main LANG=$@
 
+d:
+	@$(MAKE) main LANG=$@
+
 java:
 	@echo ''
 	@echo '--- eoolo.$@ ---'

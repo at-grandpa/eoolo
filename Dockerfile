@@ -66,6 +66,17 @@ RUN curl -sSL https://get.haskellstack.org/ | sh
 ENV PATH /usr/local/bin:$PATH
 RUN stack setup
 
+# D
+RUN apt-get -y install unzip
+RUN anyenv install denv
+RUN git clone git://github.com/repeatedly/denv.git $HOME/.denv
+ENV PATH $HOME/.anyenv/envs/denv/bin:$PATH
+ENV PATH $HOME/.denv/shims:$PATH
+ENV D_VERSION dmd-2.072.2
+RUN denv install $D_VERSION
+RUN denv global $D_VERSION
+RUN denv rehash
+
 # # php
 # RUN apt-get -y install libxml2
 # RUN apt-get -y install libxml2-dev
@@ -89,18 +100,6 @@ RUN stack setup
 # RUN phpenv install $PHP_VERSION
 # RUN phpenv global $PHP_VERSION
 # RUN phpenv rehash
-#
-# # D
-# RUN apt-get -y install unzip
-# RUN apt-get -y install gcc
-# RUN anyenv install denv
-# RUN git clone git://github.com/repeatedly/denv.git $HOME/.denv
-# ENV PATH $HOME/.anyenv/envs/denv/bin:$PATH
-# ENV PATH $HOME/.denv/shims:$PATH
-# ENV D_VERSION dmd-2.072.2
-# RUN denv install $D_VERSION
-# RUN denv global $D_VERSION
-# RUN denv rehash
 #
 # # java
 # RUN apt-get -y install openjdk-8-jre
