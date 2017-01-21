@@ -13,6 +13,7 @@ LANGUAGES= \
 		   cpp \
 		   go \
 		   java \
+		   dart \
 		   # php \
 		   # lua \
 		   # nim \

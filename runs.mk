@@ -57,6 +57,9 @@ java:
 	@cd scripts; java eoolo
 	@rm -rf ./scripts/eoolo.class
 
+dart:
+	@$(MAKE) main LANG=$@
+
 nim:
 	@echo ''
 	@echo '--- eoolo.$@ ---'
