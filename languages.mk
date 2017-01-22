@@ -14,6 +14,7 @@ LANGUAGES= \
 		   go \
 		   java \
 		   dart \
+		   f \
 		   # php \
 		   # lua \
 		   # nim \

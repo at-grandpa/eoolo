@@ -60,6 +60,13 @@ java:
 dart:
 	@$(MAKE) main LANG=$@
 
+f:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@gfortran -o eoolo scripts/eoolo.f
+	@./eoolo
+	@rm -rf eoolo
+
 nim:
 	@echo ''
 	@echo '--- eoolo.$@ ---'

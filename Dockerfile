@@ -106,6 +106,9 @@ RUN apt-get -y update
 RUN sh -c 'curl https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_unstable.list > /etc/apt/sources.list.d/dart_unstable.list'
 RUN apt-get -y install dart/stable
 
+# Fortran
+RUN apt-get -y install gfortran
+
 
 # # php
 # RUN apt-get -y install libxml2
