@@ -13,5 +13,8 @@ run:
 include languages.mk
 include runs.mk
 
-eoolo: $(LANGUAGES)
+eoolo:
+	$(MAKE) all_language --no-print-directory
+
+all_language: $(LANGUAGES)
 
