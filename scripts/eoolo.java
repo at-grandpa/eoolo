@@ -1,6 +1,6 @@
 public class eoolo {
     public static void main(String[] args){
-        // Logical operators in java accept only boolean.
+        // Logical operators accept only boolean.
         System.out.println(expr1() || expr2());
     }
 
