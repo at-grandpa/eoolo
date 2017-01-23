@@ -109,6 +109,12 @@ RUN apt-get -y install dart/stable
 # Fortran
 RUN apt-get -y install gfortran
 
+# Clojure
+RUN mkdir -p $HOME/.clojure
+WORKDIR $HOME/.clojure
+RUN wget -q https://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/clojure-1.8.0.zip
+RUN unzip clojure-1.8.0.zip clojure-1.8.0/clojure-1.8.0.jar
+RUN chmod a+x $HOME/.clojure/clojure-1.8.0/clojure-1.8.0.jar
 
 # # php
 # RUN apt-get -y install libxml2

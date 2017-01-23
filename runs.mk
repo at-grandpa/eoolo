@@ -67,6 +67,11 @@ f:
 	@./eoolo
 	@rm -rf eoolo
 
+clj:
+	@echo ''
+	@echo '--- eoolo.$@ ---'
+	@java -cp ~/.clojure/clojure-1.8.0/clojure-1.8.0.jar clojure.main scripts/eoolo.clj
+
 nim:
 	@echo ''
 	@echo '--- eoolo.$@ ---'
