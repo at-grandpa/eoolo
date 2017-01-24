@@ -116,6 +116,10 @@ RUN wget -q https://repo1.maven.org/maven2/org/clojure/clojure/1.8.0/clojure-1.8
 RUN unzip clojure-1.8.0.zip clojure-1.8.0/clojure-1.8.0.jar
 RUN chmod a+x $HOME/.clojure/clojure-1.8.0/clojure-1.8.0.jar
 
+# Groovy
+RUN apt-get -y install groovy
+
+
 # # php
 # RUN apt-get -y install libxml2
 # RUN apt-get -y install libxml2-dev

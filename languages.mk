@@ -16,6 +16,7 @@ LANGUAGES= \
 		   dart \
 		   f \
 		   clj \
+		   groovy \
 		   # php \
 		   # lua \
 		   # nim \

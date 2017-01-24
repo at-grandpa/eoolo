@@ -72,6 +72,9 @@ clj:
 	@echo '--- sce.$@ ---'
 	@java -cp ~/.clojure/clojure-1.8.0/clojure-1.8.0.jar clojure.main scripts/sce.clj
 
+groovy:
+	@$(MAKE) main LANG=$@
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'
