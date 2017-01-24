@@ -3,13 +3,12 @@
 import std.stdio;
 
 string expr1() {
-    write("method expr1\n");
-    return "return expr1\n";
+    return "return value of expr1.\n";
 }
 
 string expr2() {
-    write("method expr2\n");
-    return "return expr2\n";
+    write("Not Short-circuit evaluation.\n");
+    return "return value of expr2.\n";
 }
 
 int main() {

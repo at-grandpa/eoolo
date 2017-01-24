@@ -3,14 +3,13 @@
 
 function expr1()
 {
-  echo "method expr1\n";
-  return "return expr1";
+  return "return value of expr1.";
 }
 
 function expr2()
 {
-  echo "method expr2\n";
-  return "return expr2";
+  echo "Not Short-circuit evaluation.";
+  return "return value of expr2.";
 }
 
 var_dump(expr1() || expr2());

@@ -3,11 +3,10 @@ fn main() {
 }
 
 fn expr1() -> bool {
-    println!("method expr1");
     return true;
 }
 
 fn expr2() -> bool {
-    println!("method expr2");
+    println!("Not Short-circuit evaluation.");
     return true;
 }

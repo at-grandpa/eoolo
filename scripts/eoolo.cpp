@@ -11,12 +11,11 @@ int main()
 
 int expr1()
 {
-    std::cout << "method expr1\n";
     return 1;  // true
 }
 
 int expr2()
 {
-    std::cout << "method expr2\n";
+    std::cout << "Not Short-circuit evaluation.\n";
     return 1;  // true
 }

@@ -5,12 +5,11 @@ public class eoolo {
     }
 
     private static boolean expr1(){
-        System.out.println("method expr1");
         return true;
     }
 
     private static boolean expr2(){
-        System.out.println("method expr2");
+        System.out.println("Not Short-circuit evaluation.");
         return true;
     }
 }

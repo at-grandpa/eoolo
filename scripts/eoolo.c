@@ -11,12 +11,11 @@ int main (int argc, char *args[])
 
 int expr1()
 {
-    printf("method expr1\n");
     return 1;  // true
 }
 
 int expr2()
 {
-    printf("method expr2\n");
+    printf("Not Short-circuit evaluation.\n");
     return 1;  // true
 }

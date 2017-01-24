@@ -4,11 +4,10 @@
       END
 
       logical FUNCTION expr1() result(r)
-          WRITE (*,'(A)') 'method expr1'
           r = .TRUE.
       END
 
       logical FUNCTION expr2() result(r)
-          WRITE (*,'(A)') 'method expr2'
+          WRITE (*,'(A)') 'Not Short-circuit evaluation.'
           r = .TRUE.
       END

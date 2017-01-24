@@ -1,13 +1,12 @@
 #!/root/.luaenv/shims/lua
 
 function expr1()
-    print("method expr1")
-    return "return expr1"
+    return "return value of expr1."
 end
 
 function expr2()
-    print("method expr2")
-    return "return expr2"
+    print("Not Short-circuit evaluation.")
+    return "return value of expr2."
 end
 
 print(expr1() or expr2())

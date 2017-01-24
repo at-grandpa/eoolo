@@ -1,9 +1,8 @@
 proc expr1():bool =
-  echo "method expr1"
   return true
 
 proc expr2():bool =
-  echo "method expr2"
+  echo "Not Short-circuit evaluation."
   return true
 
 # Logical operators accept only boolean.

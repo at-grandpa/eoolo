@@ -1,21 +1,18 @@
 package main
 
 import "fmt"
+import "strconv"
 
 func main() {
-	if expr1() || expr2() {
-		fmt.Printf("true\n")
-	} else {
-		fmt.Printf("false\n")
-	}
+    fmt.Printf(strconv.FormatBool(expr1() || expr2()))
+	fmt.Printf("\n")
 }
 
 func expr1() bool {
-	fmt.Printf("method expr1\n")
 	return true
 }
 
 func expr2() bool {
-	fmt.Printf("method expr2\n")
+	fmt.Printf("Not Short-circuit evaluation.\n")
 	return true
 }
