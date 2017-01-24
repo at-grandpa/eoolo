@@ -15,7 +15,8 @@ RUN git clone https://github.com/riywo/anyenv $HOME/.anyenv
 RUN mkdir -p $HOME/.anyenv/envs
 ENV PATH $HOME/.anyenv/bin:$PATH
 
-# node
+
+# Node
 RUN apt-get -y install build-essential
 RUN apt-get -y install libssl-dev
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
@@ -23,7 +24,7 @@ ENV NVM_DIR $HOME/.nvm
 ENV NODE_VERSION v7.3.0
 RUN . $NVM_DIR/nvm.sh && nvm install $NODE_VERSION
 
-# ruby
+# Ruby
 RUN apt-get install -y libreadline-dev
 RUN anyenv install rbenv
 RUN $HOME/.anyenv/envs/rbenv/plugins/ruby-build/install.sh
@@ -34,7 +35,7 @@ RUN rbenv install $RUBY_VERSION
 RUN rbenv global $RUBY_VERSION
 RUN rbenv rehash
 
-# python
+# Python
 RUN anyenv install pyenv
 RUN $HOME/.anyenv/envs/pyenv/plugins/python-build/install.sh
 ENV PATH $HOME/.anyenv/envs/pyenv/bin:$PATH
@@ -44,7 +45,7 @@ RUN pyenv install $PYTHON_VERSION
 RUN pyenv global $PYTHON_VERSION
 RUN pyenv rehash
 
-# perl
+# Perl
 RUN anyenv install plenv
 ENV PLENV_ROOT $HOME/.anyenv/envs/plenv
 ENV PATH $HOME/.anyenv/envs/plenv/bin:$PATH
@@ -76,7 +77,7 @@ RUN denv install $D_VERSION
 RUN denv global $D_VERSION
 RUN denv rehash
 
-# rust
+# Rust
 RUN curl https://sh.rustup.rs -sSf > rust_install.sh
 RUN sh rust_install.sh -y
 ENV PATH $HOME/.cargo/bin:$PATH
@@ -91,7 +92,7 @@ RUN wget -q https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.7.4.linux-amd64.tar.gz
 ENV PATH /usr/local/go/bin:$PATH
 
-# java
+# Java
 RUN apt-get -y update
 RUN apt-get -y install openjdk-8-jre
 RUN apt-get -y install openjdk-8-jdk
