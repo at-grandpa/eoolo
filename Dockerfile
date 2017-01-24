@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN mkdir -p /root/eoolo
+RUN mkdir -p /root/sce
 ENV HOME /root
 ENV LC_ALL C
 
@@ -158,4 +158,4 @@ RUN chmod a+x $HOME/.clojure/clojure-1.8.0/clojure-1.8.0.jar
 # RUN sh build.sh
 # ENV PATH $HOME/Nim/bin:$PATH
 
-WORKDIR /root/eoolo
+WORKDIR /root/sce
