@@ -1,4 +1,4 @@
-public class eoolo {
+public class sce {
     public static void main(String[] args){
         // Logical operators accept only boolean.
         System.out.println(expr1() || expr2());
