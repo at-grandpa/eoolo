@@ -1,4 +1,3 @@
-# eoolo
+# Short-circuit evaluation
 
-Evaluation order of logical operators in programing languages.
-
+Short-circuit evaluation of various programming languages.

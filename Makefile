@@ -1,8 +1,8 @@
-REPOSITORY=eoolo
+REPOSITORY=sce
 TAG=default
 
 HOST_WORKDIR=$(PWD)
-CONTAINER_WORKDIR=/root/eoolo
+CONTAINER_WORKDIR=/root/sce
 
 build:
 	docker build --tag=$(REPOSITORY):$(TAG) .
@@ -13,7 +13,7 @@ run:
 include languages.mk
 include runs.mk
 
-eoolo:
+sce:
 	$(MAKE) all_language --no-print-directory
 
 all_language: $(LANGUAGES)

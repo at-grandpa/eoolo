@@ -1,6 +1,5 @@
 FROM ubuntu:16.04
 
-
 RUN mkdir -p /root/eoolo
 ENV HOME /root
 ENV LC_ALL C

@@ -1,7 +1,7 @@
 main:
 	@echo ''
-	@echo '--- eoolo.$(LANG) ---'
-	@./scripts/eoolo.$(LANG)
+	@echo '--- sce.$(LANG) ---'
+	@./scripts/sce.$(LANG)
 
 js:
 	@$(MAKE) main LANG=$@
@@ -20,8 +20,8 @@ scm:
 
 c:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@gcc ./scripts/eoolo.$@
+	@echo '--- sce.$@ ---'
+	@gcc ./scripts/sce.$@
 	@./a.out
 	@rm -rf ./a.out
 
@@ -33,48 +33,48 @@ d:
 
 rs:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@rustc ./scripts/eoolo.$@
-	@./eoolo
-	@rm -rf ./eoolo
+	@echo '--- sce.$@ ---'
+	@rustc ./scripts/sce.$@
+	@./sce
+	@rm -rf ./sce
 
 cpp:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@g++ ./scripts/eoolo.$@
+	@echo '--- sce.$@ ---'
+	@g++ ./scripts/sce.$@
 	@./a.out
 	@rm -rf ./a.out
 
 go:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@go run ./scripts/eoolo.$@
+	@echo '--- sce.$@ ---'
+	@go run ./scripts/sce.$@
 
 java:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@javac ./scripts/eoolo.$@
-	@cd scripts; java eoolo
-	@rm -rf ./scripts/eoolo.class
+	@echo '--- sce.$@ ---'
+	@javac ./scripts/sce.$@
+	@cd scripts; java sce
+	@rm -rf ./scripts/sce.class
 
 dart:
 	@$(MAKE) main LANG=$@
 
 f:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@gfortran -o eoolo scripts/eoolo.f
-	@./eoolo
-	@rm -rf eoolo
+	@echo '--- sce.$@ ---'
+	@gfortran -o sce scripts/sce.f
+	@./sce
+	@rm -rf sce
 
 clj:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@java -cp ~/.clojure/clojure-1.8.0/clojure-1.8.0.jar clojure.main scripts/eoolo.clj
+	@echo '--- sce.$@ ---'
+	@java -cp ~/.clojure/clojure-1.8.0/clojure-1.8.0.jar clojure.main scripts/sce.clj
 
 nim:
 	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@nim c -r ./scripts/eoolo.$@ 2>/dev/null
-	@rm -rf ./scripts/eoolo ./scripts/nimcache
+	@echo '--- sce.$@ ---'
+	@nim c -r ./scripts/sce.$@ 2>/dev/null
+	@rm -rf ./scripts/sce ./scripts/nimcache
 
