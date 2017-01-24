@@ -1,8 +1,8 @@
-REPOSITORY=eoolo
+REPOSITORY=sce
 TAG=default
 
 HOST_WORKDIR=$(PWD)
-CONTAINER_WORKDIR=/root/eoolo
+CONTAINER_WORKDIR=/root/sce
 
 build:
 	docker build --tag=$(REPOSITORY):$(TAG) .
@@ -10,19 +10,11 @@ build:
 run:
 	docker run -v $(HOST_WORKDIR):$(CONTAINER_WORKDIR) -it $(REPOSITORY):$(TAG)
 
-LANGUAGES=js php rb py pl d java lua
-.PHONY: $(LANGUAGES)
+include languages.mk
+include runs.mk
 
-eoolo: $(LANGUAGES)
+sce:
+	$(MAKE) all_language --no-print-directory
 
-$(LANGUAGES):
-	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@./scripts/eoolo.$@
+all_language: $(LANGUAGES)
 
-java:
-	@echo ''
-	@echo '--- eoolo.$@ ---'
-	@javac ./scripts/eoolo.java
-	@cd scripts; java eoolo
-	@rm -rf ./scripts/eoolo.class
