@@ -8,6 +8,9 @@ build:
 	docker build --tag=$(REPOSITORY):$(TAG) .
 
 run:
+	docker run -v $(HOST_WORKDIR):$(CONTAINER_WORKDIR) -i $(REPOSITORY):$(TAG) make sce --no-print-directory
+
+in:
 	docker run -v $(HOST_WORKDIR):$(CONTAINER_WORKDIR) -it $(REPOSITORY):$(TAG)
 
 include languages.mk
