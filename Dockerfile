@@ -146,6 +146,8 @@ RUN phpenv install $PHP_VERSION
 RUN phpenv global $PHP_VERSION
 RUN phpenv rehash
 
+# Erlang
+RUN apt-get -y install erlang
 RUN apt-get -y update
 # # lua
 # RUN anyenv install luaenv

@@ -78,6 +78,12 @@ groovy:
 php:
 	@$(MAKE) main LANG=$@
 
+erl:
+	@echo ''
+	@echo '--- sce.$@ ---'
+	@erlc scripts/sce.erl
+	@erl -noshell -s sce main -s init stop
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'
