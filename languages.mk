@@ -19,6 +19,7 @@ LANGUAGES= \
 		   groovy \
 		   php \
 		   erl \
+		   exs \
 		   # lua \
 		   # nim \
 

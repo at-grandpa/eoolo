@@ -148,7 +148,13 @@ RUN phpenv rehash
 
 # Erlang
 RUN apt-get -y install erlang
+
+# Elixir
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb
 RUN apt-get -y update
+RUN apt-get -y install elixir
+
+
 # # lua
 # RUN anyenv install luaenv
 # ENV PATH $HOME/.anyenv/envs/luaenv/bin:$PATH

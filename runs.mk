@@ -84,6 +84,9 @@ erl:
 	@erlc scripts/sce.erl
 	@erl -noshell -s sce main -s init stop
 
+exs:
+	@$(MAKE) main LANG=$@
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'
