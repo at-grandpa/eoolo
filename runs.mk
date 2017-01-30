@@ -75,6 +75,9 @@ clj:
 groovy:
 	@$(MAKE) main LANG=$@
 
+php:
+	@$(MAKE) main LANG=$@
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'

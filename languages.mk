@@ -17,7 +17,7 @@ LANGUAGES= \
 		   f \
 		   clj \
 		   groovy \
-		   # php \
+		   php \
 		   # lua \
 		   # nim \
 

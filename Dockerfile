@@ -120,42 +120,33 @@ RUN chmod a+x $HOME/.clojure/clojure-1.8.0/clojure-1.8.0.jar
 RUN apt-get -y install groovy
 
 # Boo
-WORKDIR $HOME
+# skip
+
+# php
+RUN apt-get -y install libxml2
+RUN apt-get -y install libxml2-dev
+RUN apt-get -y install libcurl4-openssl-dev
+RUN apt-get -y install pkg-config
+RUN apt-get -y install libssl-dev
+RUN apt-get -y install libsslcommon2-dev
+RUN apt-get -y install libjpeg-dev
+RUN apt-get -y install libpng12-dev
+RUN apt-get -y install libmcrypt-dev
+RUN apt-get -y install libreadline-dev
+RUN apt-get -y install libtidy-dev
+RUN apt-get -y install libxslt-dev
+RUN apt-get -y install autoconf
+RUN apt-get -y install automake
+RUN anyenv install phpenv
+RUN $HOME/.anyenv/envs/phpenv/plugins/php-build/install.sh
+ENV PATH $HOME/.anyenv/envs/phpenv/bin:$PATH
+ENV PATH $HOME/.phpenv/shims:$PATH
+ENV PHP_VERSION 7.1.0
+RUN phpenv install $PHP_VERSION
+RUN phpenv global $PHP_VERSION
+RUN phpenv rehash
+
 RUN apt-get -y update
-RUN apt-get -y install mono-devel
-# RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-# RUN echo "deb http://download.mono-project.com/repo/debian wheezy main" | tee /etc/apt/sources.list.d/mono-xamarin.list
-# RUN apt-get -y update
-# RUN apt-get -y install monodevelop
-# RUN wget -q https://github.com/boo-lang/boo/archive/master.zip
-# RUN unzip master.zip
-
-
-
-# # php
-# RUN apt-get -y install libxml2
-# RUN apt-get -y install libxml2-dev
-# RUN apt-get -y install libcurl4-openssl-dev
-# RUN apt-get -y install pkg-config
-# RUN apt-get -y install libssl-dev
-# RUN apt-get -y install libsslcommon2-dev
-# RUN apt-get -y install libjpeg-dev
-# RUN apt-get -y install libpng12-dev
-# RUN apt-get -y install libmcrypt-dev
-# RUN apt-get -y install libreadline-dev
-# RUN apt-get -y install libtidy-dev
-# RUN apt-get -y install libxslt-dev
-# RUN apt-get -y install autoconf
-# RUN apt-get -y install automake
-# RUN anyenv install phpenv
-# RUN $HOME/.anyenv/envs/phpenv/plugins/php-build/install.sh
-# ENV PATH $HOME/.anyenv/envs/phpenv/bin:$PATH
-# ENV PATH $HOME/.phpenv/shims:$PATH
-# ENV PHP_VERSION 7.1.0
-# RUN phpenv install $PHP_VERSION
-# RUN phpenv global $PHP_VERSION
-# RUN phpenv rehash
-#
 # # lua
 # RUN anyenv install luaenv
 # ENV PATH $HOME/.anyenv/envs/luaenv/bin:$PATH
