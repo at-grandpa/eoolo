@@ -4,6 +4,12 @@ RUN mkdir -p /root/sce
 ENV HOME /root
 ENV LC_ALL C
 
+RUN apt-get -y install --reinstall locales
+RUN dpkg-reconfigure locales
+RUN locale-gen en_US.UTF-8
+RUN locale-gen --no-purge --lang en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
 RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get -y install curl
@@ -153,11 +159,9 @@ RUN apt-get -y install erlang
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb
 RUN apt-get -y update
 RUN apt-get -y install elixir
-RUN apt-get -y install --reinstall locales
-RUN dpkg-reconfigure locales
-RUN locale-gen en_US.UTF-8
-RUN locale-gen --no-purge --lang en_US.UTF-8
-ENV LC_ALL en_US.UTF-8
+
+# Pascal
+RUN apt-get -y install fp-compiler
 
 
 # # lua

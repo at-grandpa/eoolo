@@ -20,6 +20,7 @@ LANGUAGES= \
 		   php \
 		   erl \
 		   exs \
+		   pas \
 		   # lua \
 		   # nim \
 

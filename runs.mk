@@ -88,6 +88,14 @@ erl:
 exs:
 	@$(MAKE) main LANG=$@
 
+pas:
+	@echo ''
+	@echo '--- sce.$@ ---'
+	@fpc scripts/sce.pas > /dev/null
+	@./scripts/sce
+	# @rm -rf ./scripts/sce
+	# @rm -rf ./scripts/sce.o
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'
