@@ -83,6 +83,7 @@ erl:
 	@echo '--- sce.$@ ---'
 	@erlc scripts/sce.erl
 	@erl -noshell -s sce main -s init stop
+	@rm -rf sce.beam
 
 exs:
 	@$(MAKE) main LANG=$@
