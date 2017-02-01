@@ -91,10 +91,10 @@ exs:
 pas:
 	@echo ''
 	@echo '--- sce.$@ ---'
-	@fpc scripts/sce.pas > /dev/null
+	@fpc scripts/sce.pas > /dev/null 2>&1
 	@./scripts/sce
-	# @rm -rf ./scripts/sce
-	# @rm -rf ./scripts/sce.o
+	@rm -rf ./scripts/sce
+	@rm -rf ./scripts/sce.o
 
 nim:
 	@echo ''

@@ -6,6 +6,12 @@ begin
   expr1 := true;
 end;
 
+function expr2() : boolean;
 begin
-  writeln(expr1());
+  writeln('Not Short-circuit evaluation.');
+  expr2 := true;
+end;
+
+begin
+  writeln(expr1() OR expr2());
 end.
