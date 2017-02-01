@@ -96,6 +96,11 @@ pas:
 	@rm -rf ./scripts/sce
 	@rm -rf ./scripts/sce.o
 
+gp:
+	@echo ''
+	@echo '--- sce.$@ ---'
+	@gp -f -q ./scripts/sce.gp
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'

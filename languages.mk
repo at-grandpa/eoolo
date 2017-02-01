@@ -21,6 +21,7 @@ LANGUAGES= \
 		   erl \
 		   exs \
 		   pas \
+		   gp \
 		   # lua \
 		   # nim \
 

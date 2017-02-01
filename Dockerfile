@@ -163,6 +163,10 @@ RUN apt-get -y install elixir
 # Pascal
 RUN apt-get -y install fp-compiler
 
+# PARI/GP
+RUN apt-get -y install pari-gp
+
+
 
 # # lua
 # RUN anyenv install luaenv
