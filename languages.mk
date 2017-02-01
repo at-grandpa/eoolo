@@ -22,6 +22,7 @@ LANGUAGES= \
 		   exs \
 		   pas \
 		   gp \
+		   scala \
 		   # lua \
 		   # nim \
 

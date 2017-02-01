@@ -166,6 +166,9 @@ RUN apt-get -y install fp-compiler
 # PARI/GP
 RUN apt-get -y install pari-gp
 
+# Scala
+RUN apt-get -y install scala
+
 
 
 # # lua

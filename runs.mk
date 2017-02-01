@@ -101,6 +101,11 @@ gp:
 	@echo '--- sce.$@ ---'
 	@gp -f -q ./scripts/sce.gp
 
+scala:
+	@echo ''
+	@echo '--- sce.$@ ---'
+	@scala ./scripts/sce.scala
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'
