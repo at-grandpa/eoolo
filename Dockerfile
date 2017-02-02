@@ -169,6 +169,8 @@ RUN apt-get -y install pari-gp
 # Scala
 RUN apt-get -y install scala
 
+# m4
+# Already installed.
 
 
 # # lua

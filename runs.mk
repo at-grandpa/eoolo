@@ -106,6 +106,9 @@ scala:
 	@echo '--- sce.$@ ---'
 	@scala ./scripts/sce.scala
 
+m4:
+	@$(MAKE) main LANG=$@
+
 nim:
 	@echo ''
 	@echo '--- sce.$@ ---'
