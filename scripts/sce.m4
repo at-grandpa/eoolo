@@ -1,4 +1,1 @@
-#!/usr/bin/m4
-
-define(`print', `Hello World!')
-print
+define(`print', `Hello World!')print
